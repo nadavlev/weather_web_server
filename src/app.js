@@ -2,7 +2,8 @@ const path = require('path');
 const express = require('express');
 const hbs = require('hbs');
 const geoCode = require("./utils/geoCode");
-const forcast = require("../../weather-app/utils/forcast");
+const forcast = require("./utils/forcast");
+
 
 console.log(path.join(__dirname, '../public'))
 
