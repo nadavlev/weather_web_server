@@ -7,6 +7,7 @@ const forcast = require("../../weather-app/utils/forcast");
 console.log(path.join(__dirname, '../public'))
 
 const app = express();
+const port = process.env.PORT || 3000;
 
 // static paths
 const pathToPublicDirectory = path.join(__dirname, '../public');
@@ -82,6 +83,6 @@ app.get('*', (req, res) => {
     res.render('404', {title: "404", name:"Nadav Lev", msg: "File not found - 404"});
 })
 
-app.listen(3000, () => {
-    console.log('listening on port 3000');
+app.listen(port, () => {
+    console.log(`listening on port ${port}`);
 })

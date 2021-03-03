@@ -9,7 +9,7 @@ locationForm.addEventListener('submit', (event) =>{
     errorParagraph.textContent = 'Loading;'
     weatherParagraph.textContent = '';
 
-    const url = `http://localhost:3000/weather?address=${search.value}`;
+    const url = `/weather?address=${search.value}`;
     fetch(url).then(response => {
         response.json().then(data => {
             if (data.error) {
