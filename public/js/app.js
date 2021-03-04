@@ -17,11 +17,11 @@ locationForm.addEventListener('submit', (event) =>{
                 errorParagraph.textContent = data.error;
             }
             else {
-                console.log(data.forecast);
-                console.log(data.feels);
-                console.log(data.location);
                 errorParagraph.textContent = '';
-                weatherParagraph.textContent = `Location: ${data.location}, Forecast: ${data.forecast}, Feels like: ${data.feels}`;
+                weatherParagraph.textContent = `Location: ${data.location}, Forecast: ${data.forecast}, Feels like: ${data.feels}
+                    wind: ${data.wind}, wind direction: ${data.windDirection},
+                    description: ${data.description.join(", ")}`;
+
             }
         })
     });

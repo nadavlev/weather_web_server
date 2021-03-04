@@ -8,9 +8,15 @@ const forcast = (lat, long, callback) => {
         } else if(body.error) {
             callback("Unable to find location");
         }
+        console.log(body);
         const temperature = body.current.temperature;
         const feelsLike = body.current.feelslike
-        callback(undefined, {temperature, feelsLike});
+        const wind = body.current.wind_speed;
+        const windDirection = body.current.wind_dir;
+        const icon = body.current.weather_icons;
+        const description = body.current.weather_descriptions;
+        console.log(body);
+        callback(undefined, {temperature, feelsLike, wind, windDirection, icon, description});
     })
 }
 

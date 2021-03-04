@@ -46,18 +46,21 @@ app.get('/weather', (req, res) => {
         if (error) {
             return res.send({error});
         }
-        forcast(lat, long, (err, {temperature:temp, feelsLike:feels} = {}) => {
+        forcast(lat, long, (err, {temperature:temp, feelsLike:feels, wind, windDirection, icon, description} = {}) => {
 
             if (err) {
                 return res.send({error: "Cant find forcast"});
             }
 
-            console.log(`${placeName} => It is currently ${temp}, Feels like ${feels}`);
             return res.send({
                 address: address,
                 forecast: temp,
                 feels: feels,
-                location: placeName
+                location: placeName,
+                wind,
+                windDirection,
+                icon,
+                description
             });
         })
     })
